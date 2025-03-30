@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import logo from "./_assets/icNews_logo.svg";
 
 export default function Home() {
   return (
@@ -8,10 +9,16 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.headerContent}>
             <div className={styles.logo}>
-              뉴스<span>퓨전</span>
+              {/* 183 27, 285 42 */}
+              <Image
+                src={logo.src}
+                alt={"icNews_logo"}
+                width={285}
+                height={42}
+              />
             </div>
             <nav>
-              <ul>
+              {/* <ul>
                 <li>
                   <a href="#">홈</a>
                 </li>
@@ -30,14 +37,14 @@ export default function Home() {
                 <li>
                   <a href="#">국제</a>
                 </li>
-              </ul>
+              </ul> */}
             </nav>
           </div>
         </div>
       </header>
 
       <main className={styles.container}>
-        <div className={styles.searchBar}>
+        {/* <div className={styles.searchBar}>
           <div className={styles.searchInput}>
             <input
               type="text"
@@ -53,7 +60,7 @@ export default function Home() {
             <button className={styles.filterButton}>경제</button>
             <button className={styles.filterButton}>사회</button>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.trendingTopics}>
           <h2 className={styles.sectionTitle}>실시간 이슈</h2>
@@ -71,13 +78,26 @@ export default function Home() {
         <div className={styles.newsGrid}>
           {/* News Card 1 */}
           <div className={styles.newsCard}>
-            <div className={styles.headline}>
-              <h2>
-                정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세 논란"
-              </h2>
-              <div className={styles.headlineMeta}>
-                <span>관련 기사 32개</span>
-                <span>최근 업데이트: 오늘 오전 11:23</span>
+            <div className={styles.newsImage}>
+              <div className={styles.imageContainer}>
+                <img
+                  src={
+                    "https://imgnews.pstatic.net/image/666/2025/03/25/0000068024_002_20250325200416339.jpg?type=w860"
+                  }
+                  className={styles.fullWidthImage}
+                  alt="News headline image"
+                />
+              </div>
+              <div className={styles.cardShadow}></div>
+              <div className={styles.headline}>
+                <h2>
+                  정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세
+                  논란"
+                </h2>
+                <div className={styles.headlineMeta}>
+                  <span>관련 기사 32개</span>
+                  <span>최근 업데이트: 오늘 오전 11:23</span>
+                </div>
               </div>
             </div>
             <div className={styles.coverageBar}>
@@ -155,16 +175,28 @@ export default function Home() {
             </div>
           </div>
 
-          {/* News Card 2 */}
           {/* News Card 1 */}
           <div className={styles.newsCard}>
-            <div className={styles.headline}>
-              <h2>
-                정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세 논란"
-              </h2>
-              <div className={styles.headlineMeta}>
-                <span>관련 기사 32개</span>
-                <span>최근 업데이트: 오늘 오전 11:23</span>
+            <div className={styles.newsImage}>
+              <div className={styles.imageContainer}>
+                <img
+                  src={
+                    "https://imgnews.pstatic.net/image/666/2025/03/25/0000068024_002_20250325200416339.jpg?type=w860"
+                  }
+                  className={styles.fullWidthImage}
+                  alt="News headline image"
+                />
+              </div>
+              <div className={styles.cardShadow}></div>
+              <div className={styles.headline}>
+                <h2>
+                  정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세
+                  논란"
+                </h2>
+                <div className={styles.headlineMeta}>
+                  <span>관련 기사 32개</span>
+                  <span>최근 업데이트: 오늘 오전 11:23</span>
+                </div>
               </div>
             </div>
             <div className={styles.coverageBar}>
@@ -241,17 +273,28 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* News Card 3 */}
           {/* News Card 1 */}
           <div className={styles.newsCard}>
-            <div className={styles.headline}>
-              <h2>
-                정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세 논란"
-              </h2>
-              <div className={styles.headlineMeta}>
-                <span>관련 기사 32개</span>
-                <span>최근 업데이트: 오늘 오전 11:23</span>
+            <div className={styles.newsImage}>
+              <div className={styles.imageContainer}>
+                <img
+                  src={
+                    "https://imgnews.pstatic.net/image/666/2025/03/25/0000068024_002_20250325200416339.jpg?type=w860"
+                  }
+                  className={styles.fullWidthImage}
+                  alt="News headline image"
+                />
+              </div>
+              <div className={styles.cardShadow}></div>
+              <div className={styles.headline}>
+                <h2>
+                  정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세
+                  논란"
+                </h2>
+                <div className={styles.headlineMeta}>
+                  <span>관련 기사 32개</span>
+                  <span>최근 업데이트: 오늘 오전 11:23</span>
+                </div>
               </div>
             </div>
             <div className={styles.coverageBar}>
@@ -333,7 +376,7 @@ export default function Home() {
 
       <footer className={styles.container}>
         <div className={styles.footerContent}>
-          <p>&copy; 2025 뉴스퓨전. All rights reserved.</p>
+          <p>&copy; 2025 interchangeNews. All rights reserved.</p>
         </div>
       </footer>
     </div>
