@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import logo from "./_assets/icNews_logo.svg";
+import NewsCardContainer from "./_components/NewsCardContainer";
 
 export default function Home() {
   return (
@@ -17,28 +18,6 @@ export default function Home() {
                 height={42}
               />
             </div>
-            <nav>
-              {/* <ul>
-                <li>
-                  <a href="#">홈</a>
-                </li>
-                <li>
-                  <a href="#">주요 뉴스</a>
-                </li>
-                <li>
-                  <a href="#">정치</a>
-                </li>
-                <li>
-                  <a href="#">경제</a>
-                </li>
-                <li>
-                  <a href="#">사회</a>
-                </li>
-                <li>
-                  <a href="#">국제</a>
-                </li>
-              </ul> */}
-            </nav>
           </div>
         </div>
       </header>
@@ -74,107 +53,8 @@ export default function Home() {
             <div className={styles.topicTag}>공공의료</div>
           </div>
         </div>
-
+        <NewsCardContainer />
         <div className={styles.newsGrid}>
-          {/* News Card 1 */}
-          <div className={styles.newsCard}>
-            <div className={styles.newsImage}>
-              <div className={styles.imageContainer}>
-                <img
-                  src={
-                    "https://imgnews.pstatic.net/image/666/2025/03/25/0000068024_002_20250325200416339.jpg?type=w860"
-                  }
-                  className={styles.fullWidthImage}
-                  alt="News headline image"
-                />
-              </div>
-              <div className={styles.cardShadow}></div>
-              <div className={styles.headline}>
-                <h2>
-                  정부, 새 세금정책 발표... "중산층 부담 완화" vs "부자감세
-                  논란"
-                </h2>
-                <div className={styles.headlineMeta}>
-                  <span>관련 기사 32개</span>
-                  <span>최근 업데이트: 오늘 오전 11:23</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.coverageBar}>
-              <div className={styles.coverageLiberal} style={{ width: "45%" }}>
-                진보 45%
-              </div>
-              <div className={styles.coverageNeutral} style={{ width: "15%" }}>
-                중립 15%
-              </div>
-              <div
-                className={styles.coverageConservative}
-                style={{ width: "40%" }}
-              >
-                보수 40%
-              </div>
-            </div>
-            <div className={styles.articlesContainer}>
-              <div className={styles.article}>
-                <div className={styles.articleHeader}>
-                  <img
-                    src="/api/placeholder/40/40"
-                    alt="한국일보"
-                    className={styles.articleSourceImg}
-                  />
-                  <div className={styles.articleSourceInfo}>
-                    <h3>한국일보</h3>
-                    <span
-                      className={`${styles.sourceBias} ${styles.biasLiberal}`}
-                    >
-                      진보 성향
-                    </span>
-                  </div>
-                </div>
-                <h3 className={styles.articleTitle}>
-                  "서민 증세 아닌 부자 감세"... 야당, 새 세금정책 비판
-                </h3>
-                <p className={styles.articleExcerpt}>
-                  정부의 새로운 세금정책이 중산층 지원을 표방하고 있지만,
-                  실제로는 고소득층에게 더 큰 혜택이 가는 '부자 감세'라는 비판이
-                  제기되고 있다...
-                </p>
-                <a href="#" className={styles.readMore}>
-                  기사 전문 보기
-                </a>
-              </div>
-              <div className={styles.article}>
-                <div className={styles.articleHeader}>
-                  <img
-                    src="/api/placeholder/40/40"
-                    alt="조선일보"
-                    className={styles.articleSourceImg}
-                  />
-                  <div className={styles.articleSourceInfo}>
-                    <h3>조선일보</h3>
-                    <span
-                      className={`${styles.sourceBias} ${styles.biasConservative}`}
-                    >
-                      보수 성향
-                    </span>
-                  </div>
-                </div>
-                <h3 className={styles.articleTitle}>
-                  정부 "새 세금정책으로 경제활력 되찾을 것"... 전문가들 긍정
-                  평가
-                </h3>
-                <p className={styles.articleExcerpt}>
-                  정부가 발표한 새로운 세금정책은 그동안 경직되었던 세제를
-                  합리적으로 개편해 경제 활력을 높이는 데 기여할 것이라는
-                  전문가들의 평가가...
-                </p>
-                <a href="#" className={styles.readMore}>
-                  기사 전문 보기
-                </a>
-              </div>
-            </div>
-          </div>
-
           {/* News Card 1 */}
           <div className={styles.newsCard}>
             <div className={styles.newsImage}>
