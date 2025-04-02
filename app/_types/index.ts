@@ -1,6 +1,8 @@
-type Article = {
+import { press_bias_map } from "../_const/press_bias";
+
+export type Article = {
   title: string;
-  pressName: string;
+  pressName: keyof typeof press_bias_map;
   originallink: string;
   link: string;
   pubDate: string;

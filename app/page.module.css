@@ -13,6 +13,7 @@
 .fullWidthImage {
   width: 100%;
   height: auto;
+  max-height: 600px;
   display: block;
   object-fit: cover;
 }
@@ -219,6 +220,7 @@
   height: 50px;
   display: flex;
   margin-bottom: 1px;
+  width: 100%;
 }
 
 .coverageLiberal {
