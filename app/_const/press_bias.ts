@@ -33,7 +33,7 @@ export const press_bias_map = {
   서울경제: 3,
   머니투데이: 1,
   MBN: 2,
-  KBS: 1,
+  KBS: 2,
   SBS: 2,
   TV조선: 3,
   한국경제TV: 3,

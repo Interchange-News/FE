@@ -223,45 +223,77 @@
   width: 100%;
 }
 
-.coverageLiberal {
-  background-color: var(--liberal-color);
+.coverageLiberal,
+.coverageNeutral,
+.coverageConservative {
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.coverageLiberal {
+  background-color: var(--liberal-color);
 }
 
 .coverageConservative {
   background-color: var(--conservative-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
 }
 
 .coverageNeutral {
   background-color: var(--neutral-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .coverageBar {
+    height: 40px;
+  }
+
+  .coverageLiberal,
+  .coverageNeutral,
+  .coverageConservative {
+    font-size: 14px;
+  }
+
+  .coverageLiberal span,
+  .coverageNeutral span,
+  .coverageConservative span {
+    display: none;
+  }
+
+  .coverageLiberal::after,
+  .coverageNeutral::after,
+  .coverageConservative::after {
+    content: attr(data-percent);
+  }
 }
 
 .articlesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.representativeArticles {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
 }
 
 .article {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding: 20px;
-  border-right: 1px solid var(--border-color);
-}
-
-.article:last-child {
-  border-right: none;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 100%;
 }
 
 .articleHeader {
@@ -299,6 +331,10 @@
 .biasConservative {
   background-color: rgba(231, 76, 60, 0.2);
   color: var(--conservative-color);
+}
+
+.biasNeutral {
+  background-color: var(--neutral-color);
 }
 
 .articleTitle {
@@ -360,4 +396,37 @@
   margin-top: 40px;
   color: #999;
   font-size: 14px;
+}
+
+.showMoreButton,
+.showLessButton {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: var(--light-gray);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.showMoreButton:hover,
+.showLessButton:hover {
+  background-color: #e6e6e6;
+}
+
+.allArticles {
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.allArticles .article {
+  border: 1px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.allArticles .article:last-child {
+  margin-bottom: 0;
 }
