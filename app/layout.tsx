@@ -30,7 +30,15 @@ export default function RootLayout({
         <main>{children}</main>
         <footer className={styles.container}>
           <div className={styles.footerContent}>
-            <p>&copy; 2025 interchangeNews. All rights reserved.</p>
+            <p>
+              &copy; 2025 interchangeNews. All rights reserved. <br />
+              <a
+                href="mailto:interchange.news@outlook.com"
+                className={styles.footerLink}
+              >
+                interchange.news@outlook.com
+              </a>
+            </p>
           </div>
         </footer>
       </body>

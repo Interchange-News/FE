@@ -1,10 +1,15 @@
+// PressBiasRequestPage.tsx
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { press_bias_map } from "../_const/press_bias";
 import { getBiasText } from "../_utils/press_bias";
-import Select from "react-select";
 import styles from "./page.module.css";
+
+const PressSelect = dynamic(() => import("./_components/PressSelect"), {
+  ssr: false,
+});
 
 interface PressOption {
   value: string;
@@ -31,21 +36,24 @@ export default function PressBiasRequestPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/press-bias-request", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pressName: selectedPress,
-          currentBias:
-            press_bias_map[selectedPress as keyof typeof press_bias_map],
-          suggestedBias,
-          reason,
-          email,
-          createdAt: new Date(),
-        }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/press-bias-request`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            pressName: selectedPress,
+            currentBias:
+              press_bias_map[selectedPress as keyof typeof press_bias_map],
+            suggestedBias,
+            reason,
+            email,
+            createdAt: new Date(),
+          }),
+        }
+      );
 
       if (response.ok) {
         setIsSubmitted(true);
@@ -81,20 +89,10 @@ export default function PressBiasRequestPage() {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="press">언론사 선택:</label>
-          <Select
-            id="press"
+          <PressSelect
             options={pressOptions}
-            value={pressOptions.find(
-              (option) => option.value === selectedPress
-            )}
-            onChange={(option) => setSelectedPress(option?.value || "")}
-            placeholder="언론사를 검색하세요"
-            isClearable
-            isSearchable
-            required
-            className={styles.select}
-            classNamePrefix="select"
-            noOptionsMessage={() => "검색 결과가 없습니다"}
+            selectedPress={selectedPress}
+            setSelectedPress={setSelectedPress}
           />
         </div>
 
