@@ -57,31 +57,31 @@
 }
 
 /* react-select 커스텀 스타일 */
-:global(.select__control) {
+.selectWrapper :global(.select__control) {
   border-color: #ddd !important;
   box-shadow: none !important;
   min-height: 42px !important;
 }
 
-:global(.select__control:hover) {
+.selectWrapper :global(.select__control:hover) {
   border-color: #0070f3 !important;
 }
 
-:global(.select__control--is-focused) {
+.selectWrapper :global(.select__control--is-focused) {
   border-color: #0070f3 !important;
   box-shadow: 0 0 0 1px #0070f3 !important;
 }
 
-:global(.select__menu) {
+.selectWrapper :global(.select__menu) {
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-:global(.select__option--is-focused) {
+.selectWrapper :global(.select__option--is-focused) {
   background-color: #f0f7ff !important;
 }
 
-:global(.select__option--is-selected) {
+.selectWrapper :global(.select__option--is-selected) {
   background-color: #0070f3 !important;
 }
 
