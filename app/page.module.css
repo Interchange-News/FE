@@ -430,3 +430,16 @@
 .allArticles .article:last-child {
   margin-bottom: 0;
 }
+
+.trendingTopicsHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.updatedAt {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 19px;
+  margin-left: 10px;
+}

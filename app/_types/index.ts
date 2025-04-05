@@ -18,4 +18,5 @@ export type Cluster = {
 
 export type NewsClusters = {
   data: Cluster[];
+  updatedAt: string;
 };

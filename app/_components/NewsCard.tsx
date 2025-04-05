@@ -68,11 +68,19 @@ const NewsCard = ({ data }: { data: Cluster }) => {
     <div className={styles.newsCard}>
       <div className={styles.newsImage}>
         <div className={styles.imageContainer}>
-          <img
-            src={`${data.mainImage}`}
-            className={styles.fullWidthImage}
-            alt="News headline image"
-          />
+          {data.mainImage !== null ? (
+            <img
+              src={`${data.mainImage}`}
+              className={styles.fullWidthImage}
+              alt="News headline image"
+            />
+          ) : (
+            <img
+              src={"/no_main_image.svg"}
+              className={styles.fullWidthImage}
+              alt="No main image"
+            />
+          )}
         </div>
         <div className={styles.cardShadow}></div>
         <div className={styles.headline}>
@@ -120,8 +128,12 @@ const NewsCard = ({ data }: { data: Cluster }) => {
               />
               <div className={styles.articleSourceInfo}>
                 <h3>{progressive[0].pressName}</h3>
-                <span className={`${styles.sourceBias} ${styles.biasLiberal}`}>
-                  진보 성향
+                <span
+                  className={`${styles.sourceBias} ${getBiasClass(
+                    progressive[0].pressName
+                  )}`}
+                >
+                  {getBiasTag(progressive[0].pressName)}
                 </span>
               </div>
             </div>
@@ -151,9 +163,11 @@ const NewsCard = ({ data }: { data: Cluster }) => {
               <div className={styles.articleSourceInfo}>
                 <h3>{conservative[0].pressName}</h3>
                 <span
-                  className={`${styles.sourceBias} ${styles.biasConservative}`}
+                  className={`${styles.sourceBias} ${getBiasClass(
+                    conservative[0].pressName
+                  )}`}
                 >
-                  보수 성향
+                  {getBiasTag(conservative[0].pressName)}
                 </span>
               </div>
             </div>
