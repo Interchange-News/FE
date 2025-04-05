@@ -32,7 +32,7 @@ const TopKeywordContainer = ({
       <div className={styles.trendingTopicsHeader}>
         <h2 className={styles.sectionTitle}>오늘의 주요 키워드</h2>
         <p className={styles.updatedAt}>
-          업데이트 시각: {formatKoreanDateTime(updatedAt)}
+          최근 업데이트 시각: {formatKoreanDateTime(updatedAt)}
         </p>
       </div>
       <div className={styles.topicsList}>

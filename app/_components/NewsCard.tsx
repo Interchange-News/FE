@@ -3,7 +3,6 @@ import styles from "@/app/page.module.css";
 import { Cluster } from "../_types";
 import Image from "next/image";
 import { press_bias_map } from "../_const/press_bias";
-import he from "he";
 import { useState, useRef } from "react";
 
 const NewsCard = ({ data }: { data: Cluster }) => {
@@ -84,7 +83,13 @@ const NewsCard = ({ data }: { data: Cluster }) => {
         </div>
         <div className={styles.cardShadow}></div>
         <div className={styles.headline}>
+          {/* 제목 */}
           <h2 dangerouslySetInnerHTML={{ __html: neutral[0].title }}></h2>
+          {/* 키워드 */}
+          <div className={styles.keyword}>
+            <span>{"#" + data.keywords.join(" #")}</span>
+          </div>
+          {/* 기사 개수 */}
           <div className={styles.headlineMeta}>
             <span>관련 기사 {data.articles.length}개</span>
           </div>

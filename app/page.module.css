@@ -55,6 +55,10 @@
   font-size: 0.8rem;
   color: rgb(219, 219, 219);
 }
+.keyword {
+  font-size: 0.8rem;
+  color: rgb(219, 219, 219);
+}
 
 .container {
   max-width: 1200px;
