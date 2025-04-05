@@ -138,7 +138,7 @@ const NewsCard = ({ data }: { data: Cluster }) => {
                     progressive[0].pressName
                   )}`}
                 >
-                  {getBiasTag(progressive[0].pressName)}
+                  {getBiasTag(progressive[0].pressName) + " 성향"}
                 </span>
               </div>
             </div>
@@ -172,7 +172,7 @@ const NewsCard = ({ data }: { data: Cluster }) => {
                     conservative[0].pressName
                   )}`}
                 >
-                  {getBiasTag(conservative[0].pressName)}
+                  {getBiasTag(conservative[0].pressName) + " 성향"}
                 </span>
               </div>
             </div>
