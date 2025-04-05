@@ -36,7 +36,7 @@ export default function RootLayout({
                 href="mailto:interchange.news@outlook.com"
                 className={styles.footerLink}
               >
-                interchange.news@outlook.com
+                contact us: interchange.news@outlook.com
               </a>
             </p>
           </div>
