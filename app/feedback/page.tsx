@@ -83,7 +83,8 @@ export default function PressBiasRequestPage() {
       <h1>언론사 정치 성향 수정 요청</h1>
       <p>
         언론사의 정치 성향이 잘못 기재되었다고 생각하시는 경우, 수정을
-        요청해주세요. (언론사 정치 성향은 주기적으로 피드백을 받아 수정됩니다.)
+        요청해주세요. (각 언론사의 정치 성향은 주기적으로 피드백을 받아
+        수정됩니다.)
       </p>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -102,7 +103,7 @@ export default function PressBiasRequestPage() {
             id="suggestedBias"
             value={suggestedBias}
             onChange={(e) => setSuggestedBias(Number(e.target.value))}
-            required
+            className={styles.select}
           >
             <option value={1}>진보</option>
             <option value={2}>중립</option>
@@ -111,32 +112,50 @@ export default function PressBiasRequestPage() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="reason">수정 요청 이유:</label>
+          <label htmlFor="reason">수정 요청 사유:</label>
           <textarea
             id="reason"
             value={reason}
             onChange={(e) => setReason(e.target.value)}
+            className={styles.textarea}
             required
-            placeholder="수정이 필요한 이유를 자세히 설명해주세요."
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="email">이메일:</label>
+          <label htmlFor="email">이메일 (선택):</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="연락처로 사용될 이메일을 입력해주세요."
+            className={styles.input}
+            placeholder="결과를 이메일로 받고 싶으시다면 입력해주세요"
           />
         </div>
 
         <button type="submit" className={styles.button}>
-          수정 요청 제출하기
+          요청 제출하기
         </button>
       </form>
+
+      <div className={styles.divider}>
+        <span>또는</span>
+      </div>
+
+      <div className={styles.otherInquiries}>
+        <h2>다른 문의사항</h2>
+        <p>
+          언론사 정치 성향 수정 요청 외의 다른 문의사항이 있으시다면, 아래
+          이메일로 연락해 주세요.
+        </p>
+        <a
+          href="mailto:interchange.news@outlook.com"
+          className={styles.emailLink}
+        >
+          interchange.news@outlook.com
+        </a>
+      </div>
     </div>
   );
 }

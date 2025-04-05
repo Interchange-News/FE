@@ -7,6 +7,7 @@ import { useState, useRef } from "react";
 
 const NewsCard = ({ data }: { data: Cluster }) => {
   const [showAllArticles, setShowAllArticles] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
   const { articles } = data;
   const progressive = [];
   const neutral = [];
@@ -68,16 +69,29 @@ const NewsCard = ({ data }: { data: Cluster }) => {
       <div className={styles.newsImage}>
         <div className={styles.imageContainer}>
           {data.mainImage !== null ? (
-            <img
-              src={`${data.mainImage}`}
-              className={styles.fullWidthImage}
-              alt="News headline image"
-            />
+            <>
+              {imageLoading && <div className={styles.imageSkeleton} />}
+              <Image
+                src={data.mainImage}
+                className={`${
+                  imageLoading ? styles.hidden : styles.fullWidthImage
+                }`}
+                alt="News headline image"
+                onLoad={() => setImageLoading(false)}
+                width={800}
+                height={400}
+                priority
+                quality={75}
+              />
+            </>
           ) : (
-            <img
-              src={"/no_main_image.svg"}
+            <Image
+              src="/no_main_image.svg"
               className={styles.fullWidthImage}
               alt="No main image"
+              width={800}
+              height={400}
+              priority
             />
           )}
         </div>

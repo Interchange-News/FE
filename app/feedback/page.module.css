@@ -90,3 +90,52 @@
     padding: 1rem;
   }
 }
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.otherInquiries {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.otherInquiries h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.otherInquiries p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.emailLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
+}

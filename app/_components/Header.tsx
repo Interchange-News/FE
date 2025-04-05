@@ -34,12 +34,12 @@ export default function Header() {
             서비스 소개
           </Link>
           <Link
-            href="/press-bias-request"
+            href="/feedback"
             className={`${styles.link} ${
-              pathname === "/press-bias-request" ? styles.active : ""
+              pathname === "/feedback" ? styles.active : ""
             }`}
           >
-            정치 성향 수정 요청
+            피드백
           </Link>
         </div>
       </nav>
