@@ -22,6 +22,10 @@
   text-decoration: none;
 }
 
+.logoImage {
+  transition: all 0.3s ease;
+}
+
 .links {
   display: flex;
   gap: 2rem;
