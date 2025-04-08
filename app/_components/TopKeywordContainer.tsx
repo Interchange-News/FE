@@ -8,7 +8,7 @@ const TopKeywordContainer = ({
 }) => {
   function formatKoreanDateTime(dateString: string): string {
     const utcDate = new Date(dateString);
-    const date = new Date(utcDate.getTime() + 9 * 60 * 60 * 1000);
+    const date = new Date(utcDate.getTime());
     const options: Intl.DateTimeFormatOptions = {
       timeZone: "Asia/Seoul",
       year: "numeric",
