@@ -33,10 +33,10 @@ export default function RootLayout({
             <p>
               &copy; 2025 interchangeNews. All rights reserved. <br />
               <a
-                href="mailto:interchange.news@outlook.com"
+                href="mailto:interchange.news@outlook.kr"
                 className={styles.footerLink}
               >
-                contact us: interchange.news@outlook.com
+                contact us: interchange.news@outlook.kr
               </a>
             </p>
           </div>
