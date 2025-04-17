@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# interchange News
 
-## Getting Started
+**같은 주제에 대한 다양한 언론사별 뉴스 관점을 비교해봐요.**
 
-First, run the development server:
+## 소개
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+`interchange News`는 같은 사건이나 이슈에 대해 각 언론사가 어떻게 보도했는지를 비교할 수 있는 서비스입니다. 언론사의 정치적 성향이나 보도 방식을 한눈에 파악하여, 뉴스의 다양한 관점을 이해하는 데 도움을 줍니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+정치적 성향에 따라 어떤 뉴스는 강조되거나 생략되기도 합니다. 이 서비스는 뉴스의 다양성과 편향성을 가시적으로 보여줌으로써, 독자가 더 넓은 시야를 가질 수 있도록 돕습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 주요 기능
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🧭 **뉴스 정치 성향 분석**  
+  언론사의 정치적 성향(진보, 중립, 보수)을 기반으로 뉴스를 분류하고, 서로 다른 시각의 뉴스를 비교할 수 있습니다.
 
-## Learn More
+- 🔍 **키워드 트렌딩**  
+  현재 가장 많이 언급되는 키워드를 확인하고, 어떤 언론이 어떤 키워드에 집중하는지 분석할 수 있습니다.
 
-To learn more about Next.js, take a look at the following resources:
+- 📰 **언론사별 보도 비교**  
+  같은 주제에 대해 각 언론사가 어떻게 다르게 보도했는지 비교하여 뉴스의 다양한 해석을 확인할 수 있습니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🛠️ **정치 성향 수정 요청 기능**  
+  잘못 분류된 언론사의 정치 성향에 대해 사용자 피드백을 받아 수정 요청을 할 수 있습니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 우리의 미션
 
-## Deploy on Vercel
+> interchange News는 뉴스의 다양성을 보장하고, 독자들이 다양한 관점에서 뉴스를 바라볼 수 있도록 돕는 것을 목표로 합니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+우리는 뉴스의 **객관성**과 **공정성**을 추구하며, 독자들이 스스로 사고하고 판단할 수 있는 정보를 제공합니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 기술 스택
+
+- 프론트엔드: Next.js 기반
+- 백엔드: Flask (뉴스 클러스터링 및 API 제공)
+- 데이터 출처: 네이버 뉴스 검색 API
+
