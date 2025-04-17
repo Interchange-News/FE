@@ -150,10 +150,10 @@ export default function PressBiasRequestPage() {
           이메일로 연락해 주세요.
         </p>
         <a
-          href="mailto:interchange.news@outlook.com"
+          href="mailto:interchange.news@outlook.kr"
           className={styles.emailLink}
         >
-          interchange.news@outlook.com
+          interchange.news@outlook.kr
         </a>
       </div>
     </div>
