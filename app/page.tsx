@@ -1,4 +1,4 @@
-import NewsCardContainer from "./_components/NewsCardContainer";
+import NewsCardContainer from "./_components/NewsCardContainer/NewsCardContainer";
 
 export default function Home() {
   return (
