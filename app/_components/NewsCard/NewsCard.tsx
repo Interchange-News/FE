@@ -1,8 +1,8 @@
 "use client";
-import styles from "@/app/page.module.css";
-import { Cluster } from "../_types";
+import styles from "./NewsCard.module.css";
+import { Cluster } from "../../_types";
 import Image from "next/image";
-import { press_bias_map } from "../_const/press_bias";
+import { press_bias_map } from "../../_const/press_bias";
 import { useState, useRef } from "react";
 
 const NewsCard = ({ data }: { data: Cluster }) => {

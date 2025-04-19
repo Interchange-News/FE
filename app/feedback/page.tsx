@@ -6,10 +6,14 @@ import dynamic from "next/dynamic";
 import { press_bias_map } from "../_const/press_bias";
 import { getBiasText } from "../_utils/press_bias";
 import styles from "./page.module.css";
+import { postBiasRequest } from "../_api/api";
 
-const PressSelect = dynamic(() => import("./_components/PressSelect"), {
-  ssr: false,
-});
+const PressSelect = dynamic(
+  () => import("./_components/PressSelect/PressSelect"),
+  {
+    ssr: false,
+  }
+);
 
 interface PressOption {
   value: string;
@@ -35,34 +39,20 @@ export default function PressBiasRequestPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/press-bias-request`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            pressName: selectedPress,
-            currentBias:
-              press_bias_map[selectedPress as keyof typeof press_bias_map],
-            suggestedBias,
-            reason,
-            email,
-            createdAt: new Date(),
-          }),
-        }
-      );
-
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        alert("요청 제출에 실패했습니다. 다시 시도해주세요.");
-      }
-    } catch (error) {
-      console.error("Error submitting request:", error);
-      alert("요청 제출 중 오류가 발생했습니다.");
+    const requestBody = {
+      pressName: selectedPress,
+      currentBias: press_bias_map[selectedPress as keyof typeof press_bias_map],
+      suggestedBias,
+      reason,
+      email,
+      createdAt: new Date(),
+    };
+    const response = await postBiasRequest(requestBody);
+    if (response && response.status === 200) {
+      setIsSubmitted(true);
+    } else {
+      console.error("Request failed with status:", response?.status);
+      alert("요청 처리 중 오류가 발생했습니다. 다시 시도해 주세요.");
     }
   };
 

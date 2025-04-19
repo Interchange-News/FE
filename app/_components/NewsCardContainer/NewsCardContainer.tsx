@@ -1,11 +1,11 @@
-import styles from "@/app/page.module.css";
-import NewsCard from "./NewsCard";
-import { Cluster } from "../_types";
-import fetchNewsClusters from "../_api/api";
-import TopKeywordContainer from "./TopKeywordContainer";
+import styles from "./NewsCardContainer.module.css";
+import NewsCard from "../NewsCard/NewsCard";
+import { Cluster } from "../../_types";
+import { getNewsClusters } from "../../_api/api";
+import TopKeywordContainer from "../TopKeywordContainer/TopKeywordContainer";
 
 const NewsCardContainer = async () => {
-  const response = await fetchNewsClusters();
+  const response = await getNewsClusters();
   const data_values = response.data;
 
   const allKeywords = data_values.flatMap((cluster) => cluster.keywords);
