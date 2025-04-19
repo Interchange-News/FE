@@ -35,10 +35,11 @@
   padding: 8px 15px;
   background-color: var(--light-gray);
   border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  /* TODO: 태그 선택하여 분류 기능 추가하기 */
+  /* cursor: pointer;
+  transition: background-color 0.3s; */
 }
 
-.topicTag:hover {
+/* .topicTag:hover {
   background-color: #e6e6e6;
-}
+} */
