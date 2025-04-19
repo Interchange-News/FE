@@ -1,0 +1,27 @@
+.selectWrapper :global(.select__control) {
+  border-color: #ddd !important;
+  box-shadow: none !important;
+  min-height: 42px !important;
+}
+
+.selectWrapper :global(.select__control:hover) {
+  border-color: #0070f3 !important;
+}
+
+.selectWrapper :global(.select__control--is-focused) {
+  border-color: #0070f3 !important;
+  box-shadow: 0 0 0 1px #0070f3 !important;
+}
+
+.selectWrapper :global(.select__menu) {
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.selectWrapper :global(.select__option--is-focused) {
+  background-color: #f0f7ff !important;
+}
+
+.selectWrapper :global(.select__option--is-selected) {
+  background-color: #0070f3 !important;
+}

@@ -1,4 +1,4 @@
-import styles from "../page.module.css";
+import styles from "./TopKeywordContainer.module.css";
 const TopKeywordContainer = ({
   topKeywords,
   updatedAt,

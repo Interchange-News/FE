@@ -2,7 +2,7 @@
 "use client";
 
 import Select from "react-select";
-import styles from "../page.module.css";
+import styles from "./PressSelect.module.css";
 
 interface PressOption {
   value: string;
